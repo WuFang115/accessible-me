@@ -1,10 +1,12 @@
 body {
   font-family: 'Roboto', Helvetica, sans-serif;
   background-color: grey;
+  color: #fff;
   margin: 0;
   padding: 0;
 }
 
+/* Title font design, use a more eye-catching font */
 h1,
 h2,
 h3,
@@ -23,6 +25,8 @@ h6 {
 img {
   width: 100%;
 }
+
+/* === Navigation bar settings === */
 
 .main-nav ul {
   list-style: none;
@@ -44,12 +48,26 @@ img {
   font-size: 1.25rem;
 }
 
+.main-nav ul li a:hover,
+.main-nav ul li a:focus {
+  background-color: #454343;
+  color: #fff;
+  font-weight: bold;
+}
+
 form input,
 form textarea {
   display: block;
   width: 100%;
   margin-bottom: 1rem;
   padding: .5rem 1rem;
+}
+
+form input:focus,
+form textarea:focus {
+  border-color: #000;
+  outline: 2px solid #000;
+  background-color: #fdfdfd;
 }
 
 form textarea {
@@ -66,6 +84,35 @@ form button {
   text-transform: uppercase;
 }
 
+form button:hover,
+form button:focus {
+  background-color: white;
+  color: black;
+  cursor: pointer;
+}
+
 .site-footer {
   padding: 2rem 0;
+}
+
+/* === Accessibility: Skip Link is hidden but keyboard focusable === */
+.skip-link {
+  position: absolute;
+  left: -999px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.skip-link:focus {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: #000;
+  color: #fff;
+  padding: 8px 12px;
+  z-index: 9999;
+  text-decoration: none;
+  font-weight: bold;
 }
